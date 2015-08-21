@@ -1,0 +1,79 @@
+<HTML><HEAD></HEAD>
+<BODY bgcolor="#F1F1FD">
+
+<FORM NAME="LoginPage" ACTION="/OnlineLoginServlet" METHOD ="POST">
+<TABLE cellPadding="3" ALIGN="center">
+<TR bgcolor="#ECFAEB">
+<TD>USERNAME:</TD>
+<TD>
+<INPUT TYPE="text" NAME="UserName" Value="" SIZE="15" focused>
+</TD>
+</TR>
+<TR bgcolor="#ECFAEB">
+<TD>PASSWORD:</TD>
+<TD>
+<INPUT TYPE="password" NAME="PassWord" Value="" SIZE="15">
+</TD>
+</TR>
+<TR bgcolor="#ECFAEB">
+<TD></TD>
+<TD>
+<INPUT TYPE="button" NAME="submitBTN" VALUE="Login" onClick="checkInputs()">
+</TD>
+</TR>
+<TR bgcolor="#ECFAEB">
+<TD colspan="2">First time user? Click Sign Up to register!</TD>
+</TR>
+<TR bgcolor="#ECFAEB">
+<TD></TD>
+<TD>
+<INPUT TYPE="button" NAME="signUpBTN" VALUE="Sign Up" onClick="location.href='SignUp.html'">
+</TD>
+</TR>
+</TABLE>
+</FORM>
+</BODY>
+<SCRIPT LANGUAGE="JavaScript">
+document.LoginPage.UserName.focus();
+function checkInputs()
+{
+	var Prompts = "";
+	Username = window.document.LoginPage.UserName.value;
+	Password = window.document.LoginPage.PassWord.value;
+	if (Username == "" || Password == "")
+	{
+		if (Username == "")
+		Prompts +="Please enter your username!\n";
+		if (Password == "")
+		Prompts +="Please enter your password!\n";
+		if (Prompts != "")
+		window.alert(Prompts);
+	}
+	else
+	{
+		document.LoginPage.submit();
+	}
+}
+function doSignUp()
+{
+	var Prompts = "";
+	Username = window.document.LoginPage.UserName.value;
+	Password = window.document.LoginPage.PassWord.value;
+	if (Username == "" || Password == "")
+	{
+		if (Username == "")
+		Prompts +="Please enter your username!\n";
+		if (Password == "")
+		Prompts +="Please enter your password!\n";
+		if (Prompts != "")
+		window.alert(Prompts);
+	}
+	else
+	{
+		document.LoginPage.submit();
+	}
+}
+</SCRIPT>
+</HTML>
+
+
